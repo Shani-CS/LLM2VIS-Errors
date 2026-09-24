@@ -1,0 +1,264 @@
+{
+ "title": "Is it Right? LLM-Produced Data Visualizations: Prompts, Code, Charts & Errors",
+ "tests": [
+  {
+   "id": "A",
+   "name": "Test A",
+   "description": "Women's soccer and World Bank prompts (GPT-4o)",
+   "count": 239,
+   "has_attempts": false,
+   "datasets": [
+    "FIFA Women's World Cup, 1991 - 2023",
+    "World Bank World Development Indicators"
+   ],
+   "facets": [
+    {
+     "name": "Chart Relationship",
+     "values": [
+      "Correlation",
+      "Deviation",
+      "Distribution",
+      "Geospatial",
+      "Nominal Comparison",
+      "Part-to-whole",
+      "Ranking",
+      "Time-series"
+     ]
+    },
+    {
+     "name": "Prompt Type",
+     "values": [
+      "Aggregation removed",
+      "Ambiguous 1",
+      "Ambiguous 2",
+      "Chart type removed",
+      "Complete",
+      "Filter removed",
+      "Grouping removed"
+     ]
+    },
+    {
+     "name": "Sub-clauses Specified",
+     "values": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+     ]
+    },
+    {
+     "name": "Chart Type",
+     "values": [
+      "Any",
+      "Bar Chart",
+      "Boxplot",
+      "Bubble Map",
+      "Cartogram",
+      "Choropleth Map",
+      "Density Plot",
+      "Dot Plot",
+      "Line Chart",
+      "Map",
+      "Pie Chart",
+      "Scatterplot",
+      "Stacked Bar Chart",
+      "Strip Plot",
+      "Timetable"
+     ]
+    },
+    {
+     "name": "Data Content Plausibility",
+     "values": [
+      "High",
+      "Low",
+      "Med",
+      "N/A",
+      "Not plausible"
+     ]
+    },
+    {
+     "name": "Chart Plausibility",
+     "values": [
+      "High",
+      "Low",
+      "N/A",
+      "Not plausible"
+     ]
+    },
+    {
+     "name": "Any Data Error",
+     "values": [
+      "N/A",
+      "No",
+      "Yes"
+     ]
+    },
+    {
+     "name": "Any Chart Error",
+     "values": [
+      "N/A",
+      "No",
+      "Yes"
+     ]
+    },
+    {
+     "name": "Self-corrected",
+     "values": [
+      "N/A",
+      "No",
+      "Yes"
+     ]
+    }
+   ],
+   "errors": [
+    "In-code Error: Loading Issue",
+    "In-code Error Processing Issue",
+    "Data Attribute Error: Ignore",
+    "Data Attribute Error: Misuse",
+    "Aggregation or Calculation Error: Ignore",
+    "Aggregation or Calculation Error: Misuse",
+    "Grouping or Binning Error: Ignore",
+    "Grouping or Binning Error: Misuse",
+    "Filter Error: Ignore",
+    "Filter Error: Misuse",
+    "Sorting Error: Ignore",
+    "Sorting Error: Misuse",
+    "Encoding Error: Ignore",
+    "Encoding Error: Misuse",
+    "Chart Description Error",
+    "Chart Inference Error: Speculation",
+    "Chart Inference Error: Fabrication"
+   ],
+   "design": [
+    "Code Design Issue",
+    "Chart Design: Overplotting",
+    "Chart Design: Color Choice",
+    "Chart Design: Legend Design",
+    "Chart Design: Axis Setup",
+    "Chart Design: Number Format"
+   ]
+  },
+  {
+   "id": "B",
+   "name": "Test B",
+   "description": "Cars, movies and superstore prompts, 3 attempts each",
+   "count": 442,
+   "has_attempts": true,
+   "datasets": [
+    "Cars",
+    "Movies",
+    "Superstore"
+   ],
+   "facets": [
+    {
+     "name": "Sub-clauses Specified",
+     "values": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4"
+     ]
+    },
+    {
+     "name": "Data Content Plausibility",
+     "values": [
+      "High",
+      "Not plausible"
+     ]
+    },
+    {
+     "name": "Chart Plausibility",
+     "values": [
+      "High",
+      "N/A",
+      "Not plausible"
+     ]
+    },
+    {
+     "name": "Any Data Error",
+     "values": [
+      "N/A",
+      "No",
+      "Yes"
+     ]
+    },
+    {
+     "name": "Any Chart Error",
+     "values": [
+      "N/A",
+      "No",
+      "Yes"
+     ]
+    },
+    {
+     "name": "Self-corrected",
+     "values": [
+      "N/A",
+      "No",
+      "Yes"
+     ]
+    },
+    {
+     "name": "Aggregation Specified",
+     "values": [
+      "No",
+      "Yes"
+     ]
+    },
+    {
+     "name": "Grouping Specified",
+     "values": [
+      "No",
+      "Yes"
+     ]
+    },
+    {
+     "name": "Filtering Specified",
+     "values": [
+      "No",
+      "Yes"
+     ]
+    },
+    {
+     "name": "Sorting Specified",
+     "values": [
+      "No",
+      "Yes"
+     ]
+    },
+    {
+     "name": "Encoding Specified",
+     "values": [
+      "No",
+      "Yes"
+     ]
+    }
+   ],
+   "errors": [
+    "In-code Error: Loading Issue",
+    "Data Attribute Error: Ignore",
+    "Data Attribute Error: Misuse",
+    "Aggregation or Calculation Error: Misuse",
+    "Filter Error: Misuse",
+    "Sorting Error: Ignore",
+    "Sorting Error: Misuse",
+    "Encoding Error: Ignore",
+    "Encoding Error: Misuse",
+    "Chart Description Error",
+    "Chart Inference Error: Speculation",
+    "Chart Inference Error: Fabrication"
+   ],
+   "design": [
+    "Code Design Issue",
+    "Chart Design: Overplotting",
+    "Chart Design: Color Choice",
+    "Chart Design: Legend Design",
+    "Chart Design: Axis Setup",
+    "Chart Design: Number Format"
+   ]
+  }
+ ]
+}
