@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LLM-Produced Data Visualizations</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11.9.0/styles/github.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1 id="title">LLM-Produced Data Visualizations</h1>
+    <div id="test-toggle" role="tablist" aria-label="Test"></div>
+  </header>
+
+  <section id="filters" aria-label="Filters">
+    <div class="filter-row">
+      <label class="grow">Prompt
+        <input id="f-search" type="search" placeholder="Search prompt text or ID…">
+      </label>
+      <label>Dataset
+        <select id="f-dataset"></select>
+      </label>
+      <label>Error
+        <select id="f-error"></select>
+      </label>
+      <button id="f-more" type="button" aria-expanded="false">More filters</button>
+      <button id="f-clear" type="button">Clear filters</button>
+    </div>
+    <div id="facet-filters" class="filter-row" hidden></div>
+  </section>
+
+  <main>
+    <aside id="list-panel">
+      <div id="list-count"></div>
+      <ol id="prompt-list"></ol>
+    </aside>
+
+    <article id="detail">
+      <p class="empty">Loading…</p>
+    </article>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
