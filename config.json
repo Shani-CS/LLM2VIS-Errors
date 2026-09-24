@@ -1,0 +1,52 @@
+{
+  "title": "Is it Right? LLM-Produced Data Visualizations: Prompts, Code, Charts & Errors",
+  "spreadsheet": "prompt-error-types.xlsm",
+
+  "columns": {
+    "_comment": "The ID is the first column and the dataset the second column of each tab. Other columns are classified by these name patterns (regular expressions, case-insensitive); anything not matched becomes a filter of its own.",
+    "prompt": "^Prompt$",
+    "errors": "Error",
+    "error_exclude": "^Any (Data|Chart) Error$",
+    "design_issues": "^(Code Design|Chart Design)",
+    "evidence": "^Code Design Issue$",
+    "hidden": []
+  },
+
+  "tests": [
+    {
+      "id": "A",
+      "name": "Test A",
+      "description": "Women's soccer and World Bank prompts (GPT-4o)",
+      "sheet": "Test A",
+      "sources": [
+        {
+          "id": "soccer",
+          "results": "sources/soccer/results.json",
+          "images_dir": "sources/soccer/images",
+          "id_format": "{query_id}"
+        },
+        {
+          "id": "world-bank",
+          "results": "sources/world-bank/results.json",
+          "images_dir": "sources/world-bank/images",
+          "id_format": "{query_id}"
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "name": "Test B",
+      "description": "Cars, movies and superstore prompts, 3 attempts each",
+      "sheet": "Test B",
+      "attempt_id": "^(?P<prompt>.+)-(?P<attempt>\\d+)$",
+      "sources": [
+        {
+          "id": "nvcorpus",
+          "results": "../ieeevis script 5/results.json",
+          "images_dir": "../ieeevis script 5/images",
+          "id_format": "{query_id}-{retries}"
+        }
+      ]
+    }
+  ]
+}
