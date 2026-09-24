@@ -41,7 +41,7 @@
       "attempt_id": "^(?P<prompt>.+)-(?P<attempt>\\d+)$",
       "sources": [
         {
-          "id": "nvcorpus",
+          "id": "nlvcorpus",
           "results": "../ieeevis script 5/results.json",
           "images_dir": "../ieeevis script 5/images",
           "id_format": "{query_id}-{retries}"
