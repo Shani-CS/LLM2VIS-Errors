@@ -4,7 +4,7 @@
   {
    "id": "A",
    "name": "Test A",
-   "description": "Women's soccer and World Bank prompts (GPT-4o)",
+   "description": "Women's soccer and World Bank (GPT-4o)",
    "count": 239,
    "has_attempts": false,
    "datasets": [
@@ -38,7 +38,7 @@
      ]
     },
     {
-     "name": "Sub-clauses Specified",
+     "name": "Clauses Specified",
      "values": [
       "0",
       "1",
@@ -143,7 +143,7 @@
   {
    "id": "B",
    "name": "Test B",
-   "description": "Cars, movies and superstore prompts, 3 attempts each",
+   "description": "Cars, Movies and Superstore (GPT-4o) 3 attempts each",
    "count": 442,
    "has_attempts": true,
    "datasets": [
@@ -153,7 +153,7 @@
    ],
    "facets": [
     {
-     "name": "Sub-clauses Specified",
+     "name": "Clauses Specified:",
      "values": [
       "0",
       "1",
