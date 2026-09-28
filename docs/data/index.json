@@ -38,7 +38,7 @@
      ]
     },
     {
-     "name": "Clauses Specified:",
+     "name": "Clauses Specified",
      "values": [
       "0",
       "1",
@@ -115,6 +115,7 @@
    "errors": [
     "In-code Error: Loading Issue",
     "In-code Error Processing Issue",
+    "Uncorrected In-code error",
     "Data Attribute Error: Ignore",
     "Data Attribute Error: Misuse",
     "Aggregation or Calculation Error: Ignore",
@@ -194,14 +195,6 @@
      ]
     },
     {
-     "name": "Self-corrected",
-     "values": [
-      "N/A",
-      "No",
-      "Yes"
-     ]
-    },
-    {
      "name": "Aggregation Specified",
      "values": [
       "No",
@@ -239,6 +232,7 @@
    ],
    "errors": [
     "In-code Error: Loading Issue",
+    "Uncorrected In-code error",
     "Data Attribute Error: Ignore",
     "Data Attribute Error: Misuse",
     "Aggregation or Calculation Error: Misuse",

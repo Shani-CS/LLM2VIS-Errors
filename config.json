@@ -3,12 +3,13 @@
   "spreadsheet": "prompt-error-types.xlsm",
 
   "columns": {
-    "_comment": "The ID is the first column and the dataset the second column of each tab. Other columns are classified by these name patterns (regular expressions, case-insensitive); anything not matched becomes a filter of its own.",
+    "_comment": "The ID is the first column and the dataset the second column of each tab. Other columns are classified by these name patterns (regular expressions, case-insensitive); anything not matched becomes a filter of its own. 'rename' maps a spreadsheet column name to the label shown on the site.",
     "prompt": "^Prompt$",
     "errors": "Error",
     "error_exclude": "^Any (Data|Chart) Error$",
     "design_issues": "^(Code Design|Chart Design)",
     "evidence": "^Code Design Issue$",
+    "rename": {"Sub-clauses Specified": "Clauses Specified"},
     "hidden": []
   },
 
@@ -16,7 +17,7 @@
     {
       "id": "A",
       "name": "Test A",
-      "description": "Women's soccer and World Bank prompts (GPT-4o)",
+      "description": "Women's soccer and World Bank (GPT-4o)",
       "sheet": "Test A",
       "sources": [
         {
@@ -36,7 +37,7 @@
     {
       "id": "B",
       "name": "Test B",
-      "description": "Cars, movies and superstore prompts, 3 attempts each",
+      "description": "Cars, Movies and Superstore (GPT-4o) 3 attempts each",
       "sheet": "Test B",
       "attempt_id": "^(?P<prompt>.+)-(?P<attempt>\\d+)$",
       "sources": [

@@ -70,9 +70,11 @@ def natural_key(s):
 def classify_columns(header, cfg):
     """Split spreadsheet columns into prompt / errors / design issues / facets (by index)."""
     hidden = set(cfg.get("hidden", []))
+    rename = cfg.get("rename", {})
     roles = {"prompt": None, "errors": [], "design": [], "facets": []}
     for i, raw in enumerate(header):
         name = clean_label(raw)
+        name = rename.get(name, name)
         if i < 2 or not name or name in hidden:
             continue
         if re.search(cfg["prompt"], name, re.I):

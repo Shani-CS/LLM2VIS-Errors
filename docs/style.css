@@ -225,7 +225,8 @@ main {
   gap: 4px 14px;
   margin-top: 6px;
 }
-.facet { display: flex; align-items: center; gap: 6px; justify-content: space-between; }
+.facet { display: flex; align-items: center; gap: 6px; }
+.facet .meta-label::after { content: ":"; }
 
 .columns {
   display: grid;
