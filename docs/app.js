@@ -198,9 +198,13 @@ function renderDetail() {
     .filter((f) => r.facets[f.name] && r.facets[f.name] !== "(blank)")
     .map((f) => `<div class="facet"><span class="meta-label">${escapeHtml(f.name)}</span>${badge(r.facets[f.name])}</div>`).join("");
 
-  // In-code errors that the model went on to fix are shown in green; red only when uncorrected.
-  const uncorrected = r.errors.includes("Uncorrected In-code error");
-  const errorClass = (e) => /^In-code Error/i.test(e) && !uncorrected ? "ok" : "error";
+  // In-code errors: one red "Unresolved" pill if uncorrected, otherwise each shown as "Resolved" in green.
+  const UNCORRECTED = "Uncorrected In-code error";
+  const isInCode = (e) => /^In-code Error/i.test(e);
+  const errorBadges = r.errors.includes(UNCORRECTED)
+    ? [badge("Unresolved In-code error", "error"),
+       ...r.errors.filter((e) => e !== UNCORRECTED && !isInCode(e)).map((e) => badge(e, "error"))]
+    : r.errors.map((e) => isInCode(e) ? badge("Resolved " + e.replace(/^(In-code Error):/i, "$1"), "ok") : badge(e, "error"));
 
   const design = Object.entries(r.design);
   const texts = r.responses.filter((x) => x.type === "text");
@@ -221,7 +225,7 @@ function renderDetail() {
     ${tabs}
     <div class="coding">
       <div class="meta-row"><span class="meta-label">Errors</span>${r.errors.length
-        ? r.errors.map((e) => badge(e, errorClass(e))).join("") : badge("No errors", "ok")}</div>
+        ? errorBadges.join("") : badge("No errors", "ok")}</div>
       ${design.length ? `<div class="design-list"><span class="meta-label">Design issues</span>
         ${design.map(([k, v]) => `<div class="design-item">${badge(k, "design")}<div class="design-text">${escapeHtml(v)}</div></div>`).join("")}</div>` : ""}
       <details class="facets-box">
