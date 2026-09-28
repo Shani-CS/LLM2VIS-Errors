@@ -198,6 +198,10 @@ function renderDetail() {
     .filter((f) => r.facets[f.name] && r.facets[f.name] !== "(blank)")
     .map((f) => `<div class="facet"><span class="meta-label">${escapeHtml(f.name)}</span>${badge(r.facets[f.name])}</div>`).join("");
 
+  // In-code errors that the model went on to fix are shown in green; red only when uncorrected.
+  const uncorrected = r.errors.includes("Uncorrected In-code error");
+  const errorClass = (e) => /^In-code Error/i.test(e) && !uncorrected ? "ok" : "error";
+
   const design = Object.entries(r.design);
   const texts = r.responses.filter((x) => x.type === "text");
   const codes = r.responses.filter((x) => x.type === "code");
@@ -217,7 +221,7 @@ function renderDetail() {
     ${tabs}
     <div class="coding">
       <div class="meta-row"><span class="meta-label">Errors</span>${r.errors.length
-        ? r.errors.map((e) => badge(e, "error")).join("") : badge("No errors", "ok")}</div>
+        ? r.errors.map((e) => badge(e, errorClass(e))).join("") : badge("No errors", "ok")}</div>
       ${design.length ? `<div class="design-list"><span class="meta-label">Design issues</span>
         ${design.map(([k, v]) => `<div class="design-item">${badge(k, "design")}<div class="design-text">${escapeHtml(v)}</div></div>`).join("")}</div>` : ""}
       <details class="facets-box">
