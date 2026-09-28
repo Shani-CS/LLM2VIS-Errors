@@ -10,7 +10,7 @@
     "design_issues": "^(Code Design|Chart Design)",
     "evidence": "^Code Design Issue$",
     "rename": {"Sub-clauses Specified": "Clauses Specified"},
-    "hidden": []
+    "hidden": ["Self-corrected"]
   },
 
   "tests": [
