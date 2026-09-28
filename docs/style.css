@@ -190,6 +190,7 @@ main {
 }
 .badge.error { background: #fdecea; color: var(--error); border-color: #f5c6c0; }
 .badge.ok { background: #e7f5ec; color: var(--ok); }
+.badge.warn { background: #ffeddc; color: #c2530a; border-color: #f9c79a; }
 .badge.inferred { font-style: italic; }
 .badge.op { background: #e8f1f8; color: #245a82; }
 .badge.design { background: #fff4e0; color: #8a5300; border-color: #f3d9a8; }

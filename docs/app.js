@@ -201,10 +201,12 @@ function renderDetail() {
   // In-code errors: one red "Unresolved" pill if uncorrected, otherwise each shown as "Resolved" in green.
   const UNCORRECTED = "Uncorrected In-code error";
   const isInCode = (e) => /^In-code Error/i.test(e);
+  // Chart description and inference errors are shown in orange, other errors in red.
+  const errorBadge = (e) => badge(e, /^Chart (Description|Inference) Error/i.test(e) ? "warn" : "error");
   const errorBadges = r.errors.includes(UNCORRECTED)
     ? [badge("Unresolved In-code error", "error"),
-       ...r.errors.filter((e) => e !== UNCORRECTED && !isInCode(e)).map((e) => badge(e, "error"))]
-    : r.errors.map((e) => isInCode(e) ? badge("Resolved " + e.replace(/^(In-code Error):/i, "$1"), "ok") : badge(e, "error"));
+       ...r.errors.filter((e) => e !== UNCORRECTED && !isInCode(e)).map(errorBadge)]
+    : r.errors.map((e) => isInCode(e) ? badge("Resolved " + e.replace(/^(In-code Error):/i, "$1"), "ok") : errorBadge(e));
 
   const design = Object.entries(r.design);
   const texts = r.responses.filter((x) => x.type === "text");
