@@ -346,7 +346,6 @@ abstract.addEventListener("toggle", () => {
 async function init() {
   try {
     state.index = await fetch("data/index.json").then((r) => r.json());
-    document.title = state.index.title;
     $("title").textContent = state.index.title;
     const params = readHash();
     await loadTest(params.get("t") || state.index.tests[0].id, params);
