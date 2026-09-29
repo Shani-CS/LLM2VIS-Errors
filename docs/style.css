@@ -334,6 +334,15 @@ h3.meta-label { margin: 6px 0 2px; }
 .code-block { margin: 0 0 10px; border: 1px solid var(--border); }
 .code-block code { padding: 10px !important; overflow-x: visible !important; }  /* the focusable <pre> scrolls, not <code> */
 .chart-img { width: 100%; border: 1px solid var(--border); border-radius: 6px; margin-bottom: 10px; background: white; }
+.chart-data { margin: 0 0 14px; }
+.chart-data summary { cursor: pointer; font-size: 12px; font-weight: 600; color: var(--muted); }
+.chart-data table { width: 100%; border-collapse: collapse; margin-top: 6px; font-size: 12px; }
+.chart-data caption { text-align: left; font-weight: 600; margin-bottom: 4px; }
+.chart-data th, .chart-data td { padding: 5px 7px; border: 1px solid var(--border); text-align: left; vertical-align: top; }
+.chart-data thead th { background: #f4f6f8; }
+.site-footer { padding: 10px 16px; background: var(--panel); border-top: 1px solid var(--border); }
+.site-footer h2 { margin: 0 0 4px; font-size: 14px; }
+.site-footer p { margin: 0; color: var(--muted); line-height: 1.5; }
 .missing { color: var(--error); font-size: 12px; }
 
 @media (max-width: 1100px) {

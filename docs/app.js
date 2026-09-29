@@ -280,7 +280,17 @@ function renderDetail() {
       <section class="column">
         <h3>Charts (${charts.length})</h3>
         ${charts.length ? charts.map((x, i) => x.content
-            ? `<a href="${escapeHtml(x.content)}" target="_blank" rel="noopener"><img class="chart-img" loading="lazy" src="${escapeHtml(x.content)}" alt="Chart ${i + 1} of ${charts.length} for ${escapeHtml(r.id)}, open full size in a new tab"></a>`
+            ? `<div class="chart-block"><a href="${escapeHtml(x.content)}" target="_blank" rel="noopener"><img class="chart-img" loading="lazy" src="${escapeHtml(x.content)}" alt="Chart ${i + 1} of ${charts.length} for ${escapeHtml(r.id)}. Chart information follows."></a><details class="chart-data" open>
+              <summary>Chart information (data values unavailable)</summary>
+              <table>
+                <caption>Chart information for prompt ${escapeHtml(r.id)}, image ${i + 1}</caption>
+                <thead><tr><th scope="col">Field</th><th scope="col">Value</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">Dataset</th><td>${escapeHtml(r.dataset)}</td></tr>
+                  <tr><th scope="row">Data values</th><td>Not included in the exported chart data. The plotted values are not available in this viewer.</td></tr>
+                </tbody>
+              </table>
+            </details></div>`
             : `<p class="missing">Image missing: ${escapeHtml(x.missing)}</p>`).join("")
           : `<p class="empty">No chart generated.</p>`}
       </section>
