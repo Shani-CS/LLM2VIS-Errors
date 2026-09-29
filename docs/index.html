@@ -8,12 +8,17 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <nav class="skip-links" aria-label="Skip links">
+    <a href="#detail" data-skip="detail">Skip to selected prompt</a>
+    <a href="#prompt-list" data-skip="list">Skip to prompt list</a>
+  </nav>
+
   <section id="paper" aria-label="Paper">
     <h1>Is it Right? Characterizing Errors in Large Language Model-Produced Data Visualizations</h1>
     <p class="authors">Shani C. Spivak, Luca Podo, Enrico Bertini, and Melanie Tory</p>
     <details id="abstract" open>
       <summary>Abstract</summary>
-      <p>Large language models (LLMs) have shown potential as natural language interfaces for producing data
+      <p id="abstract-text">Large language models (LLMs) have shown potential as natural language interfaces for producing data
         visualizations. However, LLM-produced visualizations are often riddled with errors. To better understand the
         types of errors LLMs make on these tasks and how they tie back to prompt wording, using OpenAI’s GPT-4o we
         conducted two studies in which we qualitatively coded errors associated with (1) a set of 237
@@ -31,7 +36,7 @@
 
   <header>
     <h2 id="title">LLM-Produced Data Visualizations</h2>
-    <div id="test-toggle" role="tablist" aria-label="Test"></div>
+    <div id="test-toggle" role="group" aria-label="Test"></div>
   </header>
 
   <section id="filters" aria-label="Filters">
@@ -52,14 +57,15 @@
   </section>
 
   <main>
-    <aside id="list-panel">
-      <div id="list-count"></div>
-      <ol id="prompt-list"></ol>
+    <aside id="list-panel" aria-label="Prompts">
+      <div id="list-count" role="status" aria-live="polite" aria-atomic="true"></div>
+      <p id="list-help" class="list-help">Use <kbd>↑</kbd> <kbd>↓</kbd> in the list, or <kbd>j</kbd> <kbd>k</kbd> anywhere, to move between prompts.</p>
+      <ol id="prompt-list" role="list" aria-describedby="list-help" tabindex="-1"></ol>
     </aside>
 
-    <article id="detail">
+    <section id="detail" aria-label="Selected prompt" tabindex="-1">
       <p class="empty">Loading…</p>
-    </article>
+    </section>
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
