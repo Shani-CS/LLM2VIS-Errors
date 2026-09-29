@@ -337,6 +337,12 @@ els.clear.addEventListener("click", () => clearFilters());
 
 // ---------- Init ----------
 
+const abstract = $("abstract");
+try { if (localStorage.getItem("abstractOpen") === "0") abstract.open = false; } catch {}
+abstract.addEventListener("toggle", () => {
+  try { localStorage.setItem("abstractOpen", abstract.open ? "1" : "0"); } catch {}
+});
+
 async function init() {
   try {
     state.index = await fetch("data/index.json").then((r) => r.json());

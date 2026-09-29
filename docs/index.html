@@ -8,8 +8,29 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <section id="paper" aria-label="Paper">
+    <h1>Is it Right? Characterizing Errors in Large Language Model-Produced Data Visualizations</h1>
+    <p class="authors">Shani C. Spivak, Luca Podo, Enrico Bertini, and Melanie Tory</p>
+    <details id="abstract" open>
+      <summary>Abstract</summary>
+      <p>Large language models (LLMs) have shown potential as natural language interfaces for producing data
+        visualizations. However, LLM-produced visualizations are often riddled with errors. To better understand the
+        types of errors LLMs make on these tasks and how they tie back to prompt wording, using OpenAI’s GPT-4o we
+        conducted two studies in which we qualitatively coded errors associated with (1) a set of 237
+        manually-developed, highly structured queries and (2) a set of 150 naturally derived, colloquial queries from
+        an established benchmark. Based on this, we present a characterization of the types of errors made by LLMs on
+        visualization tasks. These include errors related to data handling, charts set-up, and code construction. We
+        find that a variety of errors occur throughout the visualization pipeline and that many errors may not be
+        easily identified without extensive work on the part of the user; we term this the “plausibility problem”
+        because the erroneous results often look plausible. Our error catalog will help developers and users of LLMs
+        for data visualization understand the applicability, reliability, and limitations of LLM-based data
+        visualization and establish the basis for developing new approaches to mitigate and help users recover from
+        errors.</p>
+    </details>
+  </section>
+
   <header>
-    <h1 id="title">LLM-Produced Data Visualizations</h1>
+    <h2 id="title">LLM-Produced Data Visualizations</h2>
     <div id="test-toggle" role="tablist" aria-label="Test"></div>
   </header>
 
