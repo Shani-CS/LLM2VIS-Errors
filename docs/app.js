@@ -337,7 +337,7 @@ els.toggle.addEventListener("click", (e) => {
 
 els.list.addEventListener("click", (e) => {
   const b = e.target.closest("button[data-id]");
-  if (b) select(b.dataset.id, e.detail === 0 ? "heading" : null);  // keyboard activation moves to the prompt
+  if (b) select(b.dataset.id, e.detail === 0 ? "heading" : "list");  // keyboard activation moves to the prompt
 });
 
 els.list.addEventListener("keydown", (e) => {
