@@ -263,7 +263,6 @@ function renderDetail() {
         <summary>Characteristics</summary>
         <dl class="facet-grid">${facetRows}</dl>
       </details>
-      ${r.operations.length ? `<div class="meta-row"><h3 class="meta-label">Code operations</h3>${pillList("Code operations", r.operations.map((o) => badge(o, "op")))}</div>` : ""}
     </div>
     ${r.has_results ? "" : `<p class="missing">No model output was found for this ID.</p>`}
     <div class="columns">
