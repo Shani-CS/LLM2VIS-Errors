@@ -77,8 +77,17 @@ header h2 { margin: 0; font-size: 16px; font-weight: 600; min-width: 0; }
   background: var(--panel);
   border-bottom: 1px solid var(--border);
 }
+#paper .paper-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 320px);
+  gap: 24px;
+  align-items: start;
+}
 #paper h1 { margin: 0; font-size: 20px; line-height: 1.3; color: var(--accent); }
 #paper .authors { margin: 4px 0 6px; color: var(--muted); }
+.accessibility-statement h2 { margin: 0 0 4px; font-size: 14px; color: var(--accent); }
+.accessibility-statement p { margin: 0; color: var(--muted); line-height: 1.5; }
+.accessibility-statement a { color: var(--accent); }
 #abstract summary { cursor: pointer; font-size: 12px; font-weight: 600; color: var(--muted); }
 #abstract p {
   margin: 6px 0 0;
@@ -86,6 +95,7 @@ header h2 { margin: 0; font-size: 16px; font-weight: 600; min-width: 0; }
   line-height: 1.5;
 }
 @media (max-width: 800px) {
+  #paper .paper-heading { grid-template-columns: 1fr; gap: 8px; }
   #abstract p { max-height: 9em; overflow-y: auto; }
 }
 
@@ -340,9 +350,6 @@ h3.meta-label { margin: 6px 0 2px; }
 .chart-data caption { text-align: left; font-weight: 600; margin-bottom: 4px; }
 .chart-data th, .chart-data td { padding: 5px 7px; border: 1px solid var(--border); text-align: left; vertical-align: top; }
 .chart-data thead th { background: #f4f6f8; }
-.site-footer { padding: 10px 16px; background: var(--panel); border-top: 1px solid var(--border); }
-.site-footer h2 { margin: 0 0 4px; font-size: 14px; }
-.site-footer p { margin: 0; color: var(--muted); line-height: 1.5; }
 .missing { color: var(--error); font-size: 12px; }
 
 @media (max-width: 1100px) {
