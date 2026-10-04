@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Is it Right? Characterizing Errors in LLM-Produced Data Visualizations</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11.9.0/styles/github.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="skip-links" aria-label="Skip links">
+    <a href="#detail" data-skip="detail">Skip to selected prompt</a>
+    <a href="#prompt-list" data-skip="list">Skip to prompt list</a>
+  </nav>
+
+  <section id="paper" aria-label="Paper">
+    <div class="paper-heading">
+      <div>
+        <h1>Is it Right? Characterizing Errors in Large Language Model-Produced Data Visualizations</h1>
+        <p class="authors">Shani C. Spivak, Luca Podo, Enrico Bertini, and Melanie Tory</p>
+      </div>
+      <aside class="accessibility-statement" aria-labelledby="accessibility-statement-heading">
+        <h2 id="accessibility-statement-heading">Accessibility statement</h2>
+        <p>We aim to make this site usable with keyboard, screen reader, and high-contrast settings. To report an accessibility problem, use the <a href="https://github.com/Shani-CS/LLM2VIS-Errors/issues">project issue tracker</a>.</p>
+      </aside>
+    </div>
+    <details id="abstract">
+      <summary>Abstract</summary>
+      <p id="abstract-text">Large language models (LLMs) have shown potential as natural language interfaces for producing data visualizations. However, LLM-produced visualizations are often riddled with errors. To better understand the types of errors LLMs make on these tasks and how they tie back to prompt wording, using OpenAI’s GPT-4o we conducted two studies in which we qualitatively coded errors associated with (1) a set of 237 manually-developed, highly structured queries and (2) a set of 150 naturally derived, colloquial queries from an established benchmark. Based on this, we present a characterization of the types of errors made by LLMs on visualization tasks. These include errors related to data handling, charts set-up, and code construction. Below you can explore our results across the two sets (Test A and Test B). For each prompt, we include the prompt characteristics, the text, code, and chart produced by the model, and the types of errors in those responses.</p>
+    </details>
+    <a class="taxonomy-link" href="table_taxonomy.pdf">View error taxonomy (PDF)</a>
+  </section>
+
+  <header>
+    <h2 id="title">LLM-Produced Data Visualizations</h2>
+    <div id="test-toggle" role="group" aria-label="Test"></div>
+  </header>
+
+  <section id="filters" aria-label="Filters">
+    <div class="filter-row">
+      <label class="grow">Prompt
+        <input id="f-search" type="search" placeholder="Search prompt text or ID…">
+      </label>
+      <label>Dataset
+        <select id="f-dataset"></select>
+      </label>
+      <label>Error
+        <select id="f-error"></select>
+      </label>
+      <button id="f-more" type="button" aria-expanded="false">More filters</button>
+      <button id="f-clear" type="button">Clear filters</button>
+    </div>
+    <div id="facet-filters" class="filter-row" hidden></div>
+  </section>
+
+  <main>
+    <aside id="list-panel" aria-label="Prompts">
+      <div id="list-count" role="status" aria-live="polite" aria-atomic="true"></div>
+      <p id="list-help" class="list-help">Use <kbd>↑</kbd> <kbd>↓</kbd> in the list, or <kbd>j</kbd> <kbd>k</kbd> anywhere, to move between prompts.</p>
+      <ol id="prompt-list" role="list" aria-describedby="list-help" tabindex="-1"></ol>
+    </aside>
+
+    <section id="detail" aria-label="Selected prompt" tabindex="-1">
+      <p class="empty">Loading…</p>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11.9.0/highlight.min.js"></script>
+  <script src="app.js?v=757c32b"></script>
+</body>
+</html>
